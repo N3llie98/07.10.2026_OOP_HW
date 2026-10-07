@@ -10,7 +10,7 @@ public:
 	Date(int d, int m, int y) { day = d; month = m; year = y; }
 
 	void print() {
-		cout << "Day: " << day << "\nMonth: " << month << "\nYear: " << year << endl;
+		cout << "Day: " << day << "\nMonth: " << month << "\nYear: " << year << endl << endl;
 	}
 
 	//all months have 30 days and no leap years :DDDD
@@ -54,10 +54,23 @@ int main()
 	Date d1(3, 3, 2026);
 	Date d2(2, 1, 2026);
 	Date d3(1, 1, 2026);
-	cout << d1 - d2 << endl //61 - 2 м≥с€ц≥ й один день
-		<< d2 - d3 << endl; //1 день
-	Date dRes1 = d3 + 3;
-	dRes1.print(); //Day: 4
+	d1.print();
+	d2.print();
+	cout << "-- RES OF SUBTRACTION: " << d1 - d2 << endl << endl << endl; //р≥зницц€ в 61 день (2 м≥с€ц≥ й 1 день)
 
+	d2.print();
+	d3.print();
+	cout << "-- RES OF SUBTRACTION: " << d2 - d3 << endl << endl << endl; //р≥зниц€ в 1 день
+
+	Date dRes = d3 + 3;
+	d3.print();
+	cout << "-- RES OF + 3:\n";
+	dRes.print(); //Day: 1 + 3 = 4
+	cout << "-- RES OF ANOTHER + 31:\n";
+	dRes = dRes + 31;
+	dRes.print(); //Month: 1 + 1 = 2; Day: 4 + 1 = 5
+	cout << "-- RES OF ANOTHER + 391:\n";
+	dRes = dRes + 391;
+	dRes.print(); //Year: 2026 + 1 = 2027; Month: 2 + 1 = 3; Day: 5 + 1 = 6;
 	return 0;
 }
